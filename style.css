@@ -1,0 +1,27 @@
+.buttons {
+    padding-top: 25px;
+    font-size: 16pt;
+    padding-left: 140px;
+}
+
+#information{
+	font-family: "Lucida Console", Monaco, monospace;
+	padding: 15px;
+	position: fixed;
+	bottom: 0px;
+	left:0px;
+	font-size: 12px;
+	text-align: left;
+	line-height: 16px;
+	opacity: .75;
+}
+
+#information:hover{
+	opacity: 1;
+}
+
+#canvas{
+	position: fixed;
+	top: 0px;
+	left:0px;
+}
