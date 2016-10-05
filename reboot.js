@@ -289,7 +289,7 @@ function infiniteMondrians(p5) {
         }
       }
     }
-    rs.concat(rs2);
+   rs = rs.concat(rs2);
 
     //6. color in some of the rectangles
     var end = rs.length / p5.int(p5.random(4, 10));
