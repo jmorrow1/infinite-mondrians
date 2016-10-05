@@ -98,7 +98,7 @@ function infiniteMondrians(p5) {
     }
 
     if (!animating) {
-      p5.noLoop();
+      // p5.noLoop();
     }
 
     p5.strokeWeight(1);
@@ -176,26 +176,29 @@ function infiniteMondrians(p5) {
     slider.touchStarted(draw);
 
     var generateButton = p5.createButton("Generate");
-    generateButton.touchStarted(spawnPainting);
+    generateButton.mousePressed(spawnPainting);
     generateButton.position(painting_x + painting_sqrt/2 - generateButton.size().width/2, slider.position().y + slider.size().height + 5);
 
     var saveButton = p5.createButton("Save Image");
     saveButton.id("saveButton");
-    saveButton.touchStarted(saveMondrian);
+    saveButton.mousePressed(saveMondrian);
     saveButton.position(painting_x + painting_sqrt/2 - saveButton.size().width/2, generateButton.position().y + saveButton.size().height + 5);
   }
+
+  var timeOfLastSpawn = 0;
 
   /**
    * Spawns a painting and initiates the animation of it.
    */
   function spawnPainting() {
-    scalar = 1;
+      scalar = 1;
 
-    generateMondrian();
+      generateMondrian();
 
-    animating = true;
-    t = 0;
-    loop();
+      animating = true;
+      t = 0;
+      timeOfLastSpawn = p5.millis();
+      // loop();
   }
 
   /**
